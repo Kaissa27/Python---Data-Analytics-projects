@@ -1,4 +1,4 @@
-def calculate_marketing_roi(): 
+def calculate_marketing_roi():
     # Dataset 1: Monthly Ad Spend (Source: Marketing Dept)
     # Format: { Month: USD_Spent }
     ad_spend = {
