@@ -1,5 +1,5 @@
 def analyze_market_data():
-    # Simulated daily closing prices for "TECH_CORP" over 10 days
+    # Simulated daily closing prices for "TECH_CORP" over 10 days 
     prices = [150.25, 152.10, 148.50, 147.00, 149.30, 155.40, 158.20, 157.00, 160.10, 162.50]
     
     # Configuration
