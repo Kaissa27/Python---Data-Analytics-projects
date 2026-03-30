@@ -1,5 +1,5 @@
 def sales_analytics():
-    # Format: (Item_Name, Category, Price)
+    # Format: (Item_Name, Category, Price) 
     transactions = [
         ("Laptop", "Electronics", 1200),
         ("Bread", "Grocery", 3),
