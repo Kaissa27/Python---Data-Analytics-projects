@@ -18,7 +18,7 @@ def sales_analytics():
     groc_revenue = sum(t[2] for t in groceries)
 
     # 3. Identify Outliers (High Value Items)
-    threshold = 500
+    threshold = 500 
     big_ticket_items = [t[0] for t in transactions if t[2] >= threshold]
 
     print(f"Electronics Revenue: ${elec_revenue}")
