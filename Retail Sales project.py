@@ -13,7 +13,7 @@ def sales_analytics():
     electronics = [t for t in transactions if t[1] == "Electronics"]
     groceries = [t for t in transactions if t[1] == "Grocery"]
 
-    # 2. Calculate Metrics
+    # 2. Calculate Metrics 
     elec_revenue = sum(t[2] for t in electronics)
     groc_revenue = sum(t[2] for t in groceries)
 
