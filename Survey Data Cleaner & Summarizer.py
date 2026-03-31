@@ -17,7 +17,7 @@ def analyze_survey():
         cleaned_data.append({"name": name, "color": color, "age": age})
 
     # 2. Aggregation Phase (Counting Favorites)
-    color_counts = {}
+    color_counts = {} 
     for person in cleaned_data:
         color = person['color']
         color_counts[color] = color_counts.get(color, 0) + 1
