@@ -12,7 +12,7 @@ def monthly_sales_report():
     monthly_totals = {}
 
     for date, amount in daily_sales:
-        # Extract the month (e.g., "2024-01" from "2024-01-05")
+        # Extract the month (e.g., "2024-01" from "2024-01-05") 
         month = date[:7] 
         
         # Add the amount to that month's total
