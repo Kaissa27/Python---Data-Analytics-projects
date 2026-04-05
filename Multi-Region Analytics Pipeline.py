@@ -1,5 +1,5 @@
 import csv
-import math
+import math 
 
 def run_analytics_capstone():
     # 1. RAW DATA (Simulating an incoming data stream)
