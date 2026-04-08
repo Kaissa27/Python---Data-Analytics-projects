@@ -25,7 +25,7 @@ def validate_sensor_data():
             errors.append(f"{id_tag}: Out of Range ({value})")
             continue
 
-        # 3. Data is valid
+        # 3. Data is valid 
         clean_readings.append(value)
 
     # 4. Final Analysis on VALID data only
