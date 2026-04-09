@@ -8,7 +8,7 @@ def analyze_user_engagement():
         "User_002": [5, 2, 8, 1, 3],
         "User_003": [120, 95, 110, 80, 105],
         "User_004": [20, 25, 20, 30, 15],
-        "User_005": [60, 0, 0, 0, 0] # User stopped logging in
+        "User_005": [60, 0, 0, 0, 0] # User stopped logging in 
     }
 
     print(f"{'User ID':<10} | {'Avg Session':<12} | {'Stability':<10} | {'Status'}")
