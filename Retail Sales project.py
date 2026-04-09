@@ -9,7 +9,7 @@ def sales_analytics():
         ("Apples", "Grocery", 5)
     ]
 
-    # 1. Split data by category
+    # 1. Split data by category 
     electronics = [t for t in transactions if t[1] == "Electronics"]
     groceries = [t for t in transactions if t[1] == "Grocery"]
 
