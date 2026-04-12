@@ -10,7 +10,7 @@ def inventory_velocity_analysis():
     }
 
     print(f"{'Product ID':<10} | {'Stock':<6} | {'Daily Avg':<10} | {'Days Left':<10} | {'Status'}")
-    print("-" * 65)
+    print("-" * 65) 
 
     for sku, info in inventory_data.items():
         # 1. Calculate Velocity (Average units sold per day)
