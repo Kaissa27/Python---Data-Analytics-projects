@@ -9,7 +9,7 @@ def inventory_velocity_analysis():
         "SKU_104": {"stock": 12,  "sales_7_days": [5, 6, 4, 7, 5, 8, 6]}
     }
 
-    print(f"{'Product ID':<10} | {'Stock':<6} | {'Daily Avg':<10} | {'Days Left':<10} | {'Status'}")
+    print(f"{'Product ID':<10} | {'Stock':<6} | {'Daily Avg':<10} | {'Days Left':<10} | {'Status'}") 
     print("-" * 65) 
 
     for sku, info in inventory_data.items():
