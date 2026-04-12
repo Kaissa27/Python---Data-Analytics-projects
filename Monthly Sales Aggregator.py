@@ -7,7 +7,7 @@ def monthly_sales_report():
         ("2024-03-22", 200), ("2024-03-31", 150)
     ]
 
-    # 1. The Aggregation Dictionary
+    # 1. The Aggregation Dictionary 
     # Key = Month, Value = Total Sales
     monthly_totals = {}
 
