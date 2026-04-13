@@ -8,7 +8,7 @@ def analyze_weather_impact():
     print(f"{'Temp (°C)':<10} | {'Sales (Units)':<15} | {'Observation'}")
     print("-" * 45)
 
-    # 1. Zip the data to see the pairs
+    # 1. Zip the data to see the pairs 
     for temp, sales in zip(temp_data, sale_data):
         # 2. Logic: Create "Buckets" for the temperature
         if temp < 15:
