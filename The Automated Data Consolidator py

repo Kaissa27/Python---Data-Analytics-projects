@@ -1,0 +1,43 @@
+import pandas as pd
+import os
+
+def consolidate_monthly_reports():
+    # 1. Setup path (simulating a 'reports' folder)
+    target_folder = './sales_data/'
+    
+    # Create the folder and dummy files for this demo if they don't exist
+    if not os.path.exists(target_folder):
+        os.makedirs(target_folder)
+        pd.DataFrame({'Date': ['Jan 1'], 'Rev': [100]}).to_csv(f'{target_folder}jan.csv', index=False)
+        pd.DataFrame({'Date': ['Feb 1'], 'Rev': [150]}).to_csv(f'{target_folder}feb.csv', index=False)
+        pd.DataFrame({'Date': ['Mar 1'], 'Rev': [200]}).to_csv(f'{target_folder}mar.csv', index=False)
+
+    print(f"Scanning folder: {target_folder}...")
+
+    # 2. File Handling: Filter for only CSV files
+    all_files = os.listdir(target_folder)
+    csv_files = [f for f in all_files if f.endswith('.csv')]
+    
+    print(f"Found {len(csv_files)} report(s): {csv_files}")
+
+    # 3. Batch Loading
+    combined_list = []
+    for filename in csv_files:
+        path = os.path.join(target_folder, filename)
+        # Load each file and add a 'Source' column so we know where data came from
+        temp_df = pd.read_csv(path)
+        temp_df['File_Source'] = filename
+        combined_list.append(temp_df)
+
+    # 4. The "Concat" (Vertical Merge)
+    master_df = pd.concat(combined_list, ignore_index=True)
+
+    print("\n--- Consolidated Master Report ---")
+    print(master_df)
+
+    # 5. Final Export
+    master_df.to_csv('Master_Sales_2025.csv', index=False)
+    print("\n✅ Saved all data into 'Master_Sales_2025.csv'")
+
+if __name__ == "__main__":
+    consolidate_monthly_reports()
