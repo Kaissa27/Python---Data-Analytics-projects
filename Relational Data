@@ -1,0 +1,40 @@
+import pandas as pd
+
+def merge_data_streams():
+    # Dataset 1: Daily Transactions (Only has Product IDs and Quantities)
+    transactions_data = {
+        'Trans_ID': [101, 102, 103, 104, 105],
+        'PID': ['A1', 'B2', 'A1', 'C3', 'B2'],
+        'Quantity': [2, 1, 5, 1, 3]
+    }
+
+    # Dataset 2: Product Catalog (The "Source of Truth" for info)
+    catalog_data = {
+        'PID': ['A1', 'B2', 'C3'],
+        'Name': ['Espresso', 'Latte', 'Croissant'],
+        'Price': [3.50, 4.25, 3.00],
+        'Category': ['Drink', 'Drink', 'Food']
+    }
+
+    # Convert to DataFrames
+    df_sales = pd.DataFrame(transactions_data)
+    df_catalog = pd.DataFrame(catalog_data)
+
+    # 1. The Merge (Equivalent to an SQL JOIN or Excel VLOOKUP)
+    # We "Join" on the 'PID' column which exists in both datasets
+    combined_df = pd.merge(df_sales, df_catalog, on='PID')
+
+    # 2. Calculated Field: Total Revenue
+    combined_df['Total_Revenue'] = combined_df['Quantity'] * combined_df['Price']
+
+    print("--- Merged Analytics Report ---")
+    print(combined_df[['Trans_ID', 'Name', 'Category', 'Total_Revenue']])
+
+    # 3. Final Insight: Revenue by Category
+    category_pivot = combined_df.groupby('Category')['Total_Revenue'].sum()
+    
+    print("\nRevenue Breakdown:")
+    print(category_pivot)
+
+if __name__ == "__main__":
+    merge_data_streams()
