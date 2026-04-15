@@ -1,0 +1,58 @@
+import pandas as pd
+import json
+
+def analyze_conversion_funnel():
+    # 1. THE DATA SOURCES
+    # Normally these would be files, but we'll define the structure here
+    
+    # JSON Data (Simulating a Web API response of user 'Events')
+    web_events_json = """
+    [
+        {"user_id": 101, "views": 50, "clicks": 5},
+        {"user_id": 102, "views": 120, "clicks": 25},
+        {"user_id": 103, "views": 10, "clicks": 1},
+        {"user_id": 104, "views": 80, "clicks": 12}
+    ]
+    """
+    
+    # Dictionary Data (Simulating an Excel sheet of actual 'Orders')
+    orders_data = {
+        'user_id': [101, 102, 104],
+        'total_spent': [45.00, 150.00, 85.00],
+        'items_bought': [1, 3, 2]
+    }
+
+    # 2. PARSING DIFFERENT FORMATS
+    # Convert JSON string to a list of dicts, then to a DataFrame
+    web_df = pd.DataFrame(json.loads(web_events_json))
+    
+    # Convert Excel-style dict to a DataFrame
+    orders_df = pd.DataFrame(orders_data)
+
+    # 3. THE "LEFT JOIN" (Crucial Intermediate Concept)
+    # We want to keep ALL web users, even if they didn't buy anything (Left Join)
+    # This allows us to see who "Dropped Off" the funnel.
+    merged_df = pd.merge(web_df, orders_df, on='user_id', how='left')
+
+    # 4. DATA REPAIR
+    # Users who didn't buy will have NaN for spent. We fill with 0.
+    merged_df['total_spent'] = merged_df['total_spent'].fillna(0)
+
+    # 5. METRIC ENGINEERING (CTR and ROI)
+    # Click-Through-Rate (CTR)
+    merged_df['CTR'] = (merged_df['clicks'] / merged_df['views']) * 100
+    
+    # Revenue Per Click (RPC)
+    merged_df['Rev_Per_Click'] = merged_df['total_spent'] / merged_df['clicks']
+
+    print("--- User Engagement & Sales Funnel ---")
+    print(merged_df[['user_id', 'views', 'clicks', 'CTR', 'total_spent']])
+
+    # 6. FUNNEL INSIGHTS
+    conversion_rate = (len(orders_df) / len(web_df)) * 100
+    print("-" * 45)
+    print(f"Overall Conversion Rate: {conversion_rate:.1f}%")
+    print(f"Average CTR: {merged_df['CTR'].mean():.2f}%")
+
+if __name__ == "__main__":
+    analyze_conversion_funnel()
