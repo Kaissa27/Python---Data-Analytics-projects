@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 def consolidate_monthly_reports():
-    # 1. Setup path (simulating a 'reports' folder)
+    # 1. Setup path (simulating a 'reports' folder) 
     target_folder = './sales_data/'
     
     # Create the folder and dummy files for this demo if they don't exist
