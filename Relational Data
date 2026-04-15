@@ -14,7 +14,7 @@ def merge_data_streams():
         'Name': ['Espresso', 'Latte', 'Croissant'],
         'Price': [3.50, 4.25, 3.00],
         'Category': ['Drink', 'Drink', 'Food']
-    }
+    } 
 
     # Convert to DataFrames
     df_sales = pd.DataFrame(transactions_data)
