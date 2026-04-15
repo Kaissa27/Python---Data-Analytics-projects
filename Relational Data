@@ -16,7 +16,7 @@ def merge_data_streams():
         'Category': ['Drink', 'Drink', 'Food']
     } 
 
-    # Convert to DataFrames
+    # Convert to DataFrames 
     df_sales = pd.DataFrame(transactions_data)
     df_catalog = pd.DataFrame(catalog_data)
 
