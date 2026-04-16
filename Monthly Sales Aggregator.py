@@ -30,7 +30,7 @@ def monthly_sales_report():
         total = monthly_totals[month]
         
         # Add a simple 'Performance Tag'
-        status = "🔥 High" if total > 400 else "Neutral"
+        status = " High" if total > 400 else "Neutral"
         print(f"{month:<10} | ${total:<11} | {status}")
 
     # 3. Growth Calculation
