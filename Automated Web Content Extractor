@@ -45,7 +45,7 @@ def scrape_simulation():
     total_value = 0
     for item, price in catalog:
         print(f"Product: {item:<15} | Price: ${price:>7.2f}")
-        total_value += price
+        total_value += price 
 
     print("-" * 35)
     print(f"Total Catalog Value:   ${total_value:.2f}")
