@@ -39,7 +39,7 @@ def analyze_feedback():
         print(f"Review: \"{text}\" -> [{sentiment}]")
 
     # 4. Final Aggregation
-    print("-" * 40)
+    print("-" * 40) 
     print("Final Sentiment Distribution:")
     for category, count in report.items():
         # Simple text-based bar chart
