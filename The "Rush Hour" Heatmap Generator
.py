@@ -47,7 +47,7 @@ def generate_hourly_heatmap():
     peak_hour = (heatmap_data == max_val).stack().idxmax()
     
     print("-" * 50)
-    print(f"🔥 TOTAL PEAK: {peak_hour[0]}:00 on {peak_hour[1]} with {max_val} sales.")
+    print(f" TOTAL PEAK: {peak_hour[0]}:00 on {peak_hour[1]} with {max_val} sales.")
 
 if __name__ == "__main__":
     generate_hourly_heatmap()
