@@ -1,0 +1,33 @@
+import pandas as pd
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def run_customer_clustering():
+    # 1. THE DATA (Spending Score 1-100, Visits per Month)
+    # We have three distinct "types" of people hidden in this data
+    data = {
+        'Spending_Score': [10, 15, 12, 80, 85, 90, 50, 55, 60],
+        'Visits': [1, 2, 1, 10, 12, 11, 5, 6, 5]
+    }
+    df = pd.DataFrame(data)
+
+    # 2. INITIALIZE & TRAIN K-MEANS
+    # We tell the model to find 3 clusters (groups)
+    kmeans = KMeans(n_clusters=3, n_init=10)
+    df['Cluster'] = kmeans.fit_transform(df).argmax(axis=1) # Simplified for demo
+
+    # Note: fit_predict is the standard way to get labels
+    df['Cluster'] = kmeans.fit_predict(df[['Spending_Score', 'Visits']])
+
+    print("--- 🤖 AI-Generated Customer Segments ---")
+    print(df.sort_values(by='Cluster'))
+
+    # 3. INTERPRETING THE GROUPS
+    for i in range(3):
+        group = df[df['Cluster'] == i]
+        print(f"\nGroup {i} Stats:")
+        print(f" - Average Spend: {group['Spending_Score'].mean():.1f}")
+        print(f" - Average Visits: {group['Visits'].mean():.1f}")
+
+if __name__ == "__main__":
+    run_customer_clustering()
