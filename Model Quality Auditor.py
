@@ -1,0 +1,31 @@
+from sklearn.metrics import confusion_matrix, classification_report
+import seaborn as sns
+import pandas as pd
+
+def evaluate_model_performance():
+    # 1. THE DATA
+    # y_true: The actual reality (0 = Inbox, 1 = Spam)
+    # y_pred: What the AI guessed
+    y_true = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+    y_pred = [0, 0, 0, 1, 0, 1, 1, 0, 1, 1]
+
+    # 2. GENERATE THE CONFUSION MATRIX
+    cm = confusion_matrix(y_true, y_pred)
+    
+    # 3. PRINT THE DETAILED REPORT
+    # This provides Precision, Recall, and F1-Score (the balance between them)
+    report = classification_report(y_true, y_pred, target_names=['Inbox', 'Spam'])
+    
+    print("--- 📋 Model Evaluation Report ---")
+    print(report)
+
+    # 4. MANUAL BREAKDOWN
+    tn, fp, fn, tp = cm.ravel()
+    print("-" * 35)
+    print(f"Correctly caught Spam (TP): {tp}")
+    print(f"False Alarms (FP):         {fp}")
+    print(f"Missed Spam (FN):          {fn}")
+    print(f"Correctly kept Inbox (TN): {tn}")
+
+if __name__ == "__main__":
+    evaluate_model_performance()
