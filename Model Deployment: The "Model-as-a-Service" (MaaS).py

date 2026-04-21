@@ -1,0 +1,31 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+import uvicorn
+
+# 1. Setup the Web App
+app = FastAPI(title="Real Estate Predictor API")
+
+# 2. Define the "Data Contract"
+# This ensures the website sends the correct data types
+class HouseData(BaseModel):
+    size_sqft: int
+    num_rooms: int
+
+# 3. Create the Prediction Route
+@app.post("/predict")
+def predict_price(data: HouseData):
+    # In a real app, you'd load your 'AutomatedLearner' object here
+    # For now, we'll use a simple logic: $200 per sqft + $50k per room
+    calculated_price = (data.size_sqft * 0.2) + (data.num_rooms * 50)
+    
+    return {
+        "status": "success",
+        "predicted_price_k": round(calculated_price, 2),
+        "currency": "USD"
+    }
+
+# 4. Run the server
+if __name__ == "__main__":
+    print("🚀 API is starting...")
+    # uvicorn.run(app, host="127.0.0.1", port=8000) 
+    # (Uncomment the line above to run locally)
