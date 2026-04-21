@@ -48,4 +48,4 @@ if __name__ == "__main__":
 
     # Make a prediction on a new house [900 sq ft, 2 rooms]
     result = ai_pipe.get_prediction([[900, 2]])
-    print(f"🔮 Predicted Value: ${result[0]:.2f}k")
+    print(f" Predicted Value: ${result[0]:.2f}k")
