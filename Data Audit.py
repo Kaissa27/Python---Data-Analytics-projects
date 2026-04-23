@@ -34,4 +34,4 @@ def data_cleansing_suite():
     print(f"\nAudit Note: Replaced missing spend values with the average of ${avg_spend:.2f}")
 
 if __name__ == "__main__":
-    data_cleansing_suite()
+    data_cleansing_suite() 
