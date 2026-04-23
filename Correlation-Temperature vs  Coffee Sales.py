@@ -35,7 +35,7 @@ def analyze_weather_impact():
         note = "As it gets hotter, people buy LESS hot coffee."
     else:
         relationship = "Positive Correlation"
-        note = "Sales move in the same direction as temperature."
+        note = "Sqles move in the same direction as temperature."
 
     print(f"\n[INSIGHT]: {relationship}")
     print(f"Strategy: {note}")
