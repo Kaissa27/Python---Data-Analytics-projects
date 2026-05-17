@@ -1,4 +1,4 @@
-def analyze_weather_impact():
+def analyze_weather_impact(): 
     # Dataset 1: Average Daily Temperature (°C)
     # Dataset 2: Total Coffee Sales (Units)
     # Both lists are mapped by index (Day 1, Day 2, etc.)
