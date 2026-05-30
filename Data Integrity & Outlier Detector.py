@@ -13,7 +13,7 @@ def validate_sensor_data():
     print("--- Data Integrity Check ---")
 
     for record in raw_data: 
-        id_tag, value = record
+        id_tag, value = record 
 
         # 1. Null Check (Handling missing data)
         if value is None:
