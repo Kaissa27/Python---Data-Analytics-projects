@@ -21,7 +21,7 @@ def basic_nlp_vectorizer():
     # Each column is a word, each row is a review
     df = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names_out())
     
-    print("--- 📝 Text-to-Number Matrix ---")
+    print("---  Text-to-Number Matrix ---")
     print(df)
     
     print("\nVocabulary mapping:")
