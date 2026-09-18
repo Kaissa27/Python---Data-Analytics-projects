@@ -37,7 +37,7 @@ def consolidate_monthly_reports():
 
     # 5. Final Export
     master_df.to_csv('Master_Sales_2025.csv', index=False)
-    print("\n✅ Saved all data into 'Master_Sales_2025.csv'")
+    print("\n Saved all data into 'Master_Sales_2025.csv'")
 
 if __name__ == "__main__":
     consolidate_monthly_reports()
