@@ -26,6 +26,6 @@ def predict_price(data: HouseData):
 
 # 4. Run the server
 if __name__ == "__main__":
-    print("🚀 API is starting...")
+    print(" API is starting...")
     # uvicorn.run(app, host="127.0.0.1", port=8000) 
     # (Uncomment the line above to run locally)
