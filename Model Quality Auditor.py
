@@ -16,7 +16,7 @@ def evaluate_model_performance():
     # This provides Precision, Recall, and F1-Score (the balance between them)
     report = classification_report(y_true, y_pred, target_names=['Inbox', 'Spam'])
     
-    print("--- 📋 Model Evaluation Report ---")
+    print("--- Model Evaluation Report ---")
     print(report)
 
     # 4. MANUAL BREAKDOWN
