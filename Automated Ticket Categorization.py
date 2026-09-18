@@ -33,7 +33,7 @@ def automate_support_tags():
     # 4. Analytics Summary
     summary = df['Category'].value_counts()
     
-    print("--- 🎫 Support Ticket Breakdown ---")
+    print("---  Support Ticket Breakdown ---")
     print(df)
     print("\nTotal Tickets by Department:")
     print(summary)
