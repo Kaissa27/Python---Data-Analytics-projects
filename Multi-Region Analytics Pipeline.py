@@ -79,7 +79,7 @@ def run_analytics_capstone():
         for err in error_log:
             print(f" - {err}")
 
-    print(f"\n✅ Pipeline Complete. Report saved to 'final_sales_report.csv'")
+    print(f"\n Pipeline Complete. Report saved to 'final_sales_report.csv'")
 
 if __name__ == "__main__":
     run_analytics_capstone()
