@@ -30,11 +30,11 @@ def detect_anomalies():
     # 5. SUMMARY
     anomalies = df[df['Is_Anomaly']]
     if not anomalies.empty:
-        print("\n[🚨 ALERT] Statistical Anomalies Detected:")
+        print("\n[ALERT] Statistical Anomalies Detected:")
         for _, row in anomalies.iterrows():
             print(f" -> User {row['User']} flagged! Time: {row['Login_Time']}s (Z-Score: {row['Z_Score']:.2f})")
     else:
-        print("\n✅ No anomalies detected.")
+        print("\n No anomalies detected.")
 
 if __name__ == "__main__":
     detect_anomalies()
