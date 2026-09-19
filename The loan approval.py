@@ -21,7 +21,7 @@ def run_loan_decision_tree():
 
     # 3. "PEEK" INSIDE THE BRAIN (The Logic)
     tree_rules = export_text(clf, feature_names=['Credit_Score', 'Income'])
-    print("--- 🌳 Decision Tree Logic ---")
+    print("---  Decision Tree Logic ---")
     print(tree_rules)
 
     # 4. PREDICT FOR A NEW APPLICANT
