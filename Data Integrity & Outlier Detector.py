@@ -44,5 +44,3 @@ def validate_sensor_data():
         print(f" - {err}")
 
 validate_sensor_data()
-
-
