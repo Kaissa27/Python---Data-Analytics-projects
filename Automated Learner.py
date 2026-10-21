@@ -11,7 +11,7 @@ class AutomatedLearner:
 
     def __clean_data(self, df):
         """Internal helper to handle missing values."""
-        print("🛠  Cleaning data...")
+        print(" Cleaning data...")
         # Fits the imputer to fill NaNs with the average of the column
         return self.imputer.fit_transform(df)
 
@@ -19,10 +19,10 @@ class AutomatedLearner:
         """The 'Meat' of the pipeline: Clean -> Fit."""
         X_clean = self.__clean_data(X_raw)
         
-        print("🏋️  Training model...")
+        print(" Training model...")
         self.model.fit(X_clean, y)
         self.is_fitted = True
-        print("✅ Pipeline ready for deployment.")
+        print("Pipeline ready for deployment.")
 
     def get_prediction(self, new_data):
         """Ensures data is cleaned exactly like the training data before predicting."""
