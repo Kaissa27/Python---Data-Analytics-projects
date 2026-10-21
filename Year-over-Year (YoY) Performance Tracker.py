@@ -35,4 +35,4 @@ def analyze_growth():
     else:
         print("RESULT: Growth is stable/stagnant.")
 
-analyze_growth()
+analyze_growth() 
