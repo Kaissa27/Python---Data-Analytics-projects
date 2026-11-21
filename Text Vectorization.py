@@ -10,7 +10,7 @@ def basic_nlp_vectorizer():
         "Terrible service, very slow"
     ]
 
-    # 2. Initialize Vectorizer
+    # 2. Initialize Vectorizer 
     # This creates a 'vocabulary' of every unique word
     vectorizer = CountVectorizer()
     
