@@ -1,6 +1,6 @@
 def validate_sensor_data():
     # Raw Data: [Reading_ID, Temperature_Celsius]
-    # Note: Some readings are clearly errors (999) or missing (None)
+    # Note: Some readings are clearly errors (999) or missing (None) 
     raw_data = [
         ["ID_01", 22.5], ["ID_02", 23.1], ["ID_03", 999.0], 
         ["ID_04", 21.8], ["ID_05", None], ["ID_06", -50.0], 
