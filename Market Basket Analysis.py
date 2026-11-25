@@ -2,7 +2,7 @@ import pandas as pd
 from mlxtend.frequent_patterns import apriori, association_rules
 
 def analyze_market_basket():
-    # 1. THE DATA (Transactions)
+    # 1.THE DATA (Transactions)
     # Each row is a transaction, each column is an item
     data = {
         'Milk': [1, 1, 0, 1, 0],
@@ -13,7 +13,7 @@ def analyze_market_basket():
     }
     df = pd.DataFrame(data)
 
-    # 2. FIND FREQUENT ITEMSETS
+    # 2. FIND FREQUENT ITEMSETS 
     # We only care about items that appear in at least 30% of transactions
     frequent_itemsets = apriori(df, min_support=0.3, use_colnames=True)
 
